@@ -1,5 +1,6 @@
-package io.github.deschna.scriptmanager.domain.execution;
+package io.github.deschna.scriptmanager.repository;
 
+import io.github.deschna.scriptmanager.domain.execution.ScriptExecution;
 import java.util.Optional;
 import java.util.UUID;
 
