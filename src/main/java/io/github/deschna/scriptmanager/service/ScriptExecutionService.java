@@ -1,6 +1,7 @@
 package io.github.deschna.scriptmanager.service;
 
 import io.github.deschna.scriptmanager.domain.execution.ScriptExecution;
+import io.github.deschna.scriptmanager.exception.ScriptExecutionNotFoundException;
 import io.github.deschna.scriptmanager.repository.ScriptExecutionRepository;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class ScriptExecutionService {
 
     @Transactional(readOnly = true)
     public ScriptExecution get(UUID id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Execution not found: id = " + id));
+        return repository.findById(id).orElseThrow(() ->
+                new ScriptExecutionNotFoundException("Execution not found: id = " + id));
     }
 }
