@@ -51,6 +51,7 @@ public class ScriptExecutionController {
     private ScriptExecutionResponse toResponse(ScriptExecution execution) {
         return new ScriptExecutionResponse(
                 execution.getId(),
+                execution.getSourceCode(),
                 execution.getStatus(),
                 execution.getStdout(),
                 execution.getStderr(),

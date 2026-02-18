@@ -6,6 +6,7 @@ import java.util.UUID;
 
 public record ScriptExecutionResponse(
         UUID id,
+        String sourceCode,
         ExecutionStatus status,
         String stdout,
         String stderr,
